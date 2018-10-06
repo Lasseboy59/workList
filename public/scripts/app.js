@@ -1,46 +1,67 @@
 'use strict';
 
-var app = {
-    title: ' Visibility Toggle',
-    subtitle: 'Here some details you can see toggle.'
-};
-
+var visibility = false;
 var stringA = '';
-var count = 0;
-var addOne = function addOne() {
-
-    count++;
-    stringA = app.subtitle;
-    if (count % 2) {
+/*
+const toggleVisibility = () => {
+    visibility = !visibility;
+    if(visibility){
+        stringA = 'Now you see me';
+    } else {
         stringA = '';
     }
-    renderApp();
+    render();
+};
+*/
+
+/*
+const render = () => {
+    const jsx = (
+        <div>
+            <h1>Visibility Toggle</h1>
+            <button onClick={toggleVisibility}>
+                {visibility ? 'Hide details' : 'Show detail'}
+            </button>
+            <p>{stringA}</p>
+        </div>
+    );
+
+
+    ReactDOM.render(jsx, document.getElementById('app'));
+};
+*/
+
+var toggleVisibility = function toggleVisibility() {
+    visibility = !visibility;
+    render();
 };
 
-var appRoot = document.getElementById('app');
-
-var renderApp = function renderApp() {
-    var template = React.createElement(
+var render = function render() {
+    var jsx = React.createElement(
         'div',
         null,
         React.createElement(
             'h1',
             null,
-            app.title
+            'Visibility Toggle'
         ),
         React.createElement(
             'button',
-            { onClick: addOne },
-            'Show details'
+            { onClick: toggleVisibility },
+            visibility ? 'Hide details' : 'Show detail'
         ),
-        React.createElement('br', null),
-        React.createElement(
-            'p',
+        visibility && React.createElement(
+            'div',
             null,
-            stringA
+            React.createElement(
+                'p',
+                null,
+                'Hey, these are some details you can now see.'
+            )
         )
     );
-    ReactDOM.render(template, appRoot);
+
+    ReactDOM.render(jsx, document.getElementById('app'));
 };
 
-renderApp();
+render();

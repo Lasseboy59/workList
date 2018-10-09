@@ -2,8 +2,45 @@
 // visibility -> false
 
 
+/* class VisibilityToggle extends React.Component {
+    constructor(props) {
+        super(props);
+
+    }
+} 
+ */
+
+
 let visibility = false;
 let stringA = '';
+/*
+const toggleVisibility = () => {
+    visibility = !visibility;
+    if(visibility){
+        stringA = 'Now you see me';
+    } else {
+        stringA = '';
+    }
+    render();
+};
+*/
+
+/*
+const render = () => {
+    const jsx = (
+        <div>
+            <h1>Visibility Toggle</h1>
+            <button onClick={toggleVisibility}>
+                {visibility ? 'Hide details' : 'Show detail'}
+            </button>
+            <p>{stringA}</p>
+        </div>
+    );
+
+
+    ReactDOM.render(jsx, document.getElementById('app'));
+};
+*/
 
 const toggleVisibility = () => {
     visibility = !visibility;
@@ -14,7 +51,7 @@ const toggleVisibility = () => {
 const render = () => {
     const jsx = (
         <div>
-            <h1>Visibility Toggle 3</h1>
+            <h1>Visibility Toggle</h1>
             <button onClick={toggleVisibility}>
                 {visibility ? 'Hide details' : 'Show detail'}
             </button>
@@ -29,5 +66,6 @@ const render = () => {
 
     ReactDOM.render(jsx, document.getElementById('app'));
 };
+
 
 render();

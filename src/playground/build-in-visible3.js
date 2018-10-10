@@ -3,7 +3,7 @@
 
 
 /* class VisibilityToggle extends React.Component {
-    constructor(props) {
+    constructor(p rops) {
         super(props);
 
     }

@@ -1,8 +1,9 @@
 import React from 'react';
 import AddOption from './AddOption';
-import Header from './Header';
 import Action from './Action';
+import Header from './Header';
 import Options from './Options';
+/* import OptionModal from './OptionModal'; */
 
 class IndecisionApp extends React.Component {
     state = {
@@ -24,6 +25,7 @@ class IndecisionApp extends React.Component {
     }
 
     handlePick = () => {
+        console.log('test');
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randomNum];
         alert(option);

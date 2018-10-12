@@ -11,5 +11,4 @@ Header.defaultProps = {
     title: 'Indecision app'
 };
 
-
 export default Header;
